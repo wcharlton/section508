@@ -5,8 +5,10 @@ PAGES: Index
 </div>
 
 <div class="">
-  image_tag_508 <br>
-  <%= image_tag_508 'https://images-na.ssl-images-amazon.com/images/G/01/aplusautomation/vendorimages/65fa961e-8f22-4fe6-a420-3c3c26dd2953.jpg._CB289161999__SL300__.jpg', alt: 'Minion', title: 'My Minions' %>
+  map <br>
+  <%= didit_map_tag name: 'My Map' do %>
+    <%= didit_area_tag href: 'javascript:;', alt: 'My Alt', shape: 'rect', coords: '0,1,2,4,5' %>
+  <% end %>
 </div>
 
 
@@ -18,6 +20,7 @@ PAGES: Index
           <%= didit_th_tag 'Another TH Tag', scope: 'row' %>
           <%= th_tag_508 scope: 'row' do %>My TH Content<% end %>
           <%= th_tag_508 'Another TH Tag', scope: 'col' %>
+          <%= th_tag_508 's', scope: 'col' %>
         </tr>
       </thead>
     <% end %>
