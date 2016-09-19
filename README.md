@@ -1,4 +1,4 @@
-= Section508
+# Section508
 
 Ruby on Rails helpers for [Section 508](http://www.section508.va.gov/) compliance.
 
