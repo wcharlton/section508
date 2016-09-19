@@ -27,26 +27,29 @@ module Section508
       end
 
       def validate_content(tag: :div, content: :content, for_508: false)
-        # raise content
         if content.blank?
           for_508 ? content_fail_508(:tag) : content_fail(:tag)
         end
       end
 
       def attribute_fail_508(tag: :div, attribute: :alt)
-        raise "<#{tag}> requires '#{attribute}' attribute for 508 compliance"
+        message = "<#{tag}> requires '#{attribute}' attribute for 508 compliance"
+        raise Section508AttributeException, message
       end
 
       def attribute_fail(tag: :div, attribute: :alt)
-        raise "<#{tag}> requires '#{attribute}' attribute to be valid or complete"
+        message = "<#{tag}> requires '#{attribute}' attribute to be valid or complete"
+        raise Section508AttributeException, message
       end
 
       def content_fail_508(tag: :div)
-        raise "<#{tag}> requires content for 508 compliance"
+        message = "<#{tag}> requires content for 508 compliance"
+        raise Section508ContentException, message
       end
 
       def content_fail(tag: :div)
-        raise "<#{tag}> requires content to be valid or complete"
+        message = "<#{tag}> requires content to be valid or complete"
+        raise Section508ContentException, message
       end
 
     end

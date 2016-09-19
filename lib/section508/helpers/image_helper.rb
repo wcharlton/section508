@@ -1,4 +1,5 @@
 # http://www.section508.va.gov/support/webdev/6_4.asp
+# Section 508 Requirments - IMAGES
 # - All images that require text equivalents have appropriate alternative text.
 #   These types of images include text rendered as an image and images rendered
 #   through AJAX, applets, or plug-ins.
@@ -28,29 +29,24 @@ module Section508
   module Helpers
     module ImageHelper
 
-      def didit_image_tag(source, options={})
+      def image_tag_508(source, options={})
         validate_attributes( tag: :img, options: options, attributes: [:alt, :title], for_508: true )
         image_tag(source, options)
       end
-      alias_method :image_tag_508, :didit_image_tag
 
-      def didit_map_tag(*args, &block)
+      def map_tag_508(*args, &block)
         content, options = content_tag_args(*args, &block)
         validate_attributes( tag: :map, options: options, attributes: [:name], for_508: true )
         content_tag( :map, options ) do
           concat( content )
         end
       end
-      alias_method :map_tag_508, :didit_map_tag
 
-      def didit_area_tag(options={})
+      def area_tag_508(options={})
         validate_attributes( tag: :area, options: options, attributes: [:shape, :coords, :href], for_508: false )
         validate_attributes( tag: :area, options: options, attributes: [:alt], for_508: true )
         tag(:area, options)
       end
-      alias_method :area_tag_508, :didit_area_tag
-
-
 
     end
   end
