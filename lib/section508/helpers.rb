@@ -6,8 +6,10 @@ module Section508
     autoload :Section508Helper
     autoload :ImageHelper
     autoload :TableHelper
+    autoload :FieldsetHelper
     include Section508Helper
     include ImageHelper
     include TableHelper
+    include FieldsetHelper
   end
 end

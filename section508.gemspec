@@ -18,5 +18,13 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.2.7.1"
 
-  s.add_development_dependency "sqlite3"
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'byebug'
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'pry-remote'
+  s.add_development_dependency 'pry-rails'
+  s.add_development_dependency 'pry-byebug'
+  s.add_development_dependency 'better_errors'
+  s.add_development_dependency 'binding_of_caller'
+
 end
