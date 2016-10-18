@@ -7,9 +7,11 @@ module Section508
     autoload :ImageHelper
     autoload :TableHelper
     autoload :FieldsetHelper
+    autoload :LinkToHelper
     include Section508Helper
     include ImageHelper
     include TableHelper
     include FieldsetHelper
+    include LinkToHelper
   end
 end

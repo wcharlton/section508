@@ -29,8 +29,8 @@ module Section508
     module TableHelper
 
       # <table>
-      def table_tag_508(*args, &block)
-        content, options = content_tag_args(*args, &block)
+      def table_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).html_safe if block_given?
         validate_attributes( tag: :table, options: options, attributes: [:id, :summary], for_508: true )
         caption = options.delete(:caption)
         content_tag( :table, options ) do
@@ -40,8 +40,8 @@ module Section508
       end
 
       # <th>
-      def th_tag_508(*args, &block)
-        content, options = content_tag_args(*args, &block)
+      def th_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).html_safe if block_given?
         validate_attributes( tag: :th, options: options, attributes: [:scope], for_508: true )
         validate_content(tag: :th, content: content, for_508: true)
         content_tag( :th, options ) do
@@ -50,40 +50,40 @@ module Section508
       end
 
       # <td>
-      def td_tag_508(*args, &block)
-        content, options = content_tag_args(*args, &block)
+      def td_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).html_safe if block_given?
         content_tag( :td, options ) do
           concat( content )
         end
       end
 
       # <tr>
-      def tr_tag_508(*args, &block)
-        content, options = content_tag_args(*args, &block)
+      def tr_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).html_safe if block_given?
         content_tag( :tr, options ) do
           concat( content )
         end
       end
 
       # <thead>
-      def thead_tag_508(*args, &block)
-        content, options = content_tag_args(*args, &block)
+      def thead_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).html_safe if block_given?
         content_tag( :thead, options ) do
           concat( content )
         end
       end
 
       # <tbody>
-      def tbody_tag_508(*args, &block)
-        content, options = content_tag_args(*args, &block)
+      def tbody_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).html_safe if block_given?
         content_tag( :tbody, options ) do
           concat( content )
         end
       end
 
       # <tfooter>
-      def tfooter_tag_508(*args, &block)
-        content, options = content_tag_args(*args, &block)
+      def tfooter_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).html_safe if block_given?
         content_tag( :tfooter, options ) do
           concat( content )
         end

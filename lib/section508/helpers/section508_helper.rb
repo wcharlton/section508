@@ -2,18 +2,24 @@ module Section508
   module Helpers
     module Section508Helper
 
-      def content_tag_args(*args, &block)
-        options = {}
-        if block_given?
-          content = capture(&block)
-          options = options.merge(args[0]) if args.size > 0
-        else
-          raise ArgumentError, "Missing parameters -2" if args.length < 1
-          content = args[0]
-          options = options.merge(args[1]) if args.size > 1
-        end
-        return content, options
-      end
+      # def content_tag_args_deprecated(*args, &block)
+      #   options = {}
+      #   if block_given?
+      #     content = capture(&block)
+      #     options = options.merge(args[0]) if args.size > 0
+      #   else
+      #     raise ArgumentError, "Missing parameters -2" if args.length < 1
+      #     content = args[0]
+      #     options = options.merge(args[1]) if args.size > 1
+      #   end
+      #   return content, options
+      # end
+      #
+      # def content_tag_args(content = nil, options = nil, &block)
+      #   options, content = capture(&content), block if block_given?
+      #   options ||= {}
+      #   return content, options
+      # end
 
 
       def validate_attributes(tag: :div, options: {}, attributes: [], for_508: false)

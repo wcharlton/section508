@@ -53,4 +53,10 @@ PAGES: Index
     <%= fieldset_tag_508 id: 'xx', name: 'xx' do %>
      <legend>Another something</legend>
       Another fieldset
+    <%= link_to_508( 'A', 'B', alt: 'alt', title: 'title') %>
     <% end %>
+
+<%= link_to_508( 'A', 'javascript:;', alt: 'alt', title: 'title', style: 'color: #f00') %>
+<%= link_to_508( 'javascript:;', alt: 'alt', title: 'title') do %>XXXXX<% end %>
+<%= link_to_508( 'Root Path', root_path, class: 'link', data: {target: '_blank'}, alt: 'alt', title: 'title') %>
+

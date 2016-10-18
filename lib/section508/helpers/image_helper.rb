@@ -34,8 +34,8 @@ module Section508
         image_tag(source, options)
       end
 
-      def map_tag_508(*args, &block)
-        content, options = content_tag_args(*args, &block)
+      def map_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).html_safe if block_given?
         validate_attributes( tag: :map, options: options, attributes: [:name], for_508: true )
         content_tag( :map, options ) do
           concat( content )
