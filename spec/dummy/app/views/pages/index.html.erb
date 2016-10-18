@@ -1,49 +1,12 @@
-PAGES: Index
-<div class="">
-    didit_image_tag<br>
-    <%= image_tag_508 'https://lh4.ggpht.com/WtFP82fcc8w5SffEqSJNENBuk0ckAy65PAZr05yp8XPaqagyMDuKt48iTOGwZ5w2CU0=h310',  title: 'Code Image', alt: 'My Code Image' %>
-</div>
 
-<div class="">
-  map <br>
-  <%= map_tag_508 name: 'My Map' do %>
-    <%= area_tag_508 href: 'javascript:;', alt: 'My Alt', shape: 'rect', coords: '0,1,2,4,5' %>
+
+<ul>
+  <% nav.each_with_index  do |nav_item, i| %>
+    <li>
+      <%= link_to nav_item[:name], nav_item[:path] %>
+    </li>
   <% end %>
-</div>
-
-
-
-    <%= table_tag_508 id:'my-table2', border: 2, summary: 'My Summary', caption: 'This is the caption for the table' do %>
-      <%= thead_tag_508 do %>
-        <%= tr_tag_508 do %>
-          <%= th_tag_508 scope: 'col' do %>My TH Content<% end %>
-          <%= th_tag_508 'Another TH Tag', scope: 'row' %>
-          <%= th_tag_508 scope: 'row' do %>My TH Content<% end %>
-          <%= th_tag_508 'Another TH Tag', scope: 'col' %>
-        <% end %>
-      <% end %>
-
-      <%= tbody_tag_508 do %>
-        <%= tr_tag_508 do %>
-          <%= th_tag_508 'BODY-TD1-Content', scope: 'row' %>
-          <%= td_tag_508 'BODY-TD2-Content', class: 'bs-cell', id: 'my-cell-id', data: {options: '1-2-3'} %>
-          <%= td_tag_508 'BODY-TD3-Content' %>
-          <%= td_tag_508 'BODY-TD4-Content' %>
-        <% end %>
-      <% end %>
-
-      <%= tfooter_tag_508 do %>
-        <%= tr_tag_508 do %>
-          <%= th_tag_508 'FOOTER-TD1-Content', scope: 'row' %>
-          <%= td_tag_508 'FOOTER-TD2-Content', class: 'bs-cell', id: 'my-cell-id', data: {options: '1-2-3'} %>
-          <%= td_tag_508 'FOOTER-TD3-Content' %>
-          <%= td_tag_508 'FOOTER-TD4-Content' %>
-        <% end %>
-      <% end %>
-
-    <% end %>
-
-
+</ul>
 
     <%= fieldset_tag_508 id: 'ss', name: 'ss', legend: 'Inline Legend' do %>
       This is some content
@@ -56,7 +19,4 @@ PAGES: Index
     <%= link_to_508( 'A', 'B', alt: 'alt', title: 'title') %>
     <% end %>
 
-<%= link_to_508( 'A', 'javascript:;', alt: 'alt', title: 'title', style: 'color: #f00') %>
-<%= link_to_508( 'javascript:;', alt: 'alt', title: 'title') do %>XXXXX<% end %>
-<%= link_to_508( 'Root Path', root_path, class: 'link', data: {target: '_blank'}, alt: 'alt', title: 'title') %>
 

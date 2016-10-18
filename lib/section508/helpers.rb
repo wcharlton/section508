@@ -8,10 +8,12 @@ module Section508
     autoload :TableHelper
     autoload :FieldsetHelper
     autoload :LinkToHelper
+    autoload :FormattingHelper
     include Section508Helper
     include ImageHelper
     include TableHelper
     include FieldsetHelper
     include LinkToHelper
+    include FormattingHelper
   end
 end

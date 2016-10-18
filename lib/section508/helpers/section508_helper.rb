@@ -78,6 +78,12 @@ module Section508
         raise Section508ContentException, message
       end
 
+      def deprecated_fail(tag: :big)
+        message = "<#{tag}> is deprecated"
+        raise Section508TagDeprecationException, message
+      end
+
+
     end
   end
 end

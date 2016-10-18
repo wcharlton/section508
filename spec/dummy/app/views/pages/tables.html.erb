@@ -1,0 +1,29 @@
+<%= table_tag_508 id:'my-table2', border: 2, summary: 'My Summary', caption: 'This is the caption for the table' do %>
+    <%= thead_tag_508 do %>
+        <%= tr_tag_508 do %>
+            <%= th_tag_508 scope: 'col' do %>My TH Content<% end %>
+            <%= th_tag_508 'Another TH Tag', scope: 'row' %>
+            <%= th_tag_508 scope: 'row' do %>My TH Content<% end %>
+            <%= th_tag_508 'Another TH Tag', scope: 'col' %>
+        <% end %>
+    <% end %>
+
+    <%= tbody_tag_508 do %>
+        <%= tr_tag_508 do %>
+            <%= th_tag_508 'BODY-TD1-Content', scope: 'row' %>
+            <%= td_tag_508 'BODY-TD2-Content', class: 'bs-cell', id: 'my-cell-id', data: {options: '1-2-3'} %>
+            <%= td_tag_508 'BODY-TD3-Content' %>
+            <%= td_tag_508 'BODY-TD4-Content' %>
+        <% end %>
+    <% end %>
+
+    <%= tfooter_tag_508 do %>
+        <%= tr_tag_508 do %>
+            <%= th_tag_508 'FOOTER-TD1-Content', scope: 'row' %>
+            <%= td_tag_508 'FOOTER-TD2-Content', class: 'bs-cell', id: 'my-cell-id', data: {options: '1-2-3'} %>
+            <%= td_tag_508 'FOOTER-TD3-Content' %>
+            <%= td_tag_508 'FOOTER-TD4-Content' %>
+        <% end %>
+    <% end %>
+
+<% end %>
