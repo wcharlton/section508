@@ -9,11 +9,13 @@ module Section508
     autoload :FieldsetHelper
     autoload :LinkToHelper
     autoload :FormattingHelper
+    autoload :MediaHelper
     include Section508Helper
     include ImageHelper
     include TableHelper
     include FieldsetHelper
     include LinkToHelper
     include FormattingHelper
+    include MediaHelper
   end
 end

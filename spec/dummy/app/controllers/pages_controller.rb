@@ -16,4 +16,8 @@ class PagesController < ApplicationController
     @title = 'Section 508 - Images'
   end
 
+  def media
+    @title = 'Section 508 - Media'
+  end
+
 end

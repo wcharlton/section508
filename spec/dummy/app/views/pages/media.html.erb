@@ -1,0 +1,28 @@
+<%= audio_tag_508('content', id: 'media', title: 'Title', src: 'a', type: 'audio/mpeg', controls: true) %>
+
+<%= audio_tag_508 id: 'media', title: 'Title', controls: true do  %>
+    <%= source_tag_508 src: 'sss', type: 'audio/mpeg' %>
+    <%= audio_source_tag_508 src: 'sss', type: 'audio/mpeg' %>
+    <%= track_tag_508 src: 'a', label: 'captions', kind: 'captions' %>
+    <%= track_tag_508 src: 'b', label: 'chapters', kind: 'chapters' %>
+    <%= track_tag_508 src: 'c', label: 'descriptions', kind: 'descriptions' %>
+    <%= track_tag_508 src: 'd', label: 'metadata', kind: 'metadata' %>
+    <%= track_tag_508 src: 'e', label: 'subtitles', kind: 'subtitles' %>
+    More content
+<% end %>
+
+
+
+<%= video_tag_508('content', id: 'media', title: 'Title', src: 'a', type: 'video/mp4', controls: true) %>
+
+<%= video_tag_508 id: 'media', title: 'Title', controls: true do  %>
+    <%= source_tag_508 src: 'sss', type: 'video/ogg' %>
+    <%= video_source_tag_508 src: 'sss', type: 'video/ogg' %>
+    <%= track_tag_508 src: 'a', label: 'captions', kind: 'captions' %>
+    <%= track_tag_508 src: 'b', label: 'chapters', kind: 'chapters' %>
+    <%= track_tag_508 src: 'c', label: 'descriptions', kind: 'descriptions' %>
+    <%= track_tag_508 src: 'd', label: 'metadata', kind: 'metadata' %>
+    <%= track_tag_508 src: 'e', label: 'subtitles', kind: 'subtitles' %>
+    More content
+<% end %>
+

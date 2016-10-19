@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'formatting' => 'pages#formatting'
   get 'tables' => 'pages#tables'
   get 'images' => 'pages#images'
+  get 'media' => 'pages#media'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

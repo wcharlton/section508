@@ -41,9 +41,7 @@ module Section508
       end
 
       def validate_content_contains(tag: :div, content: :content, for_508: false, contains: :something)
-        pattern = "<#{Regexp.quote(contains.to_s)}.*>.*\\S+.*<\/#{Regexp.quote(contains.to_s)}>"
-        comment_pattern = "<!--.*<#{Regexp.quote(contains.to_s)}.*>.*\\S+.*<\/#{Regexp.quote(contains.to_s)}>.*-->"
-        if ! Regexp.new(/#{pattern}/im).match(content) || Regexp.new(/#{comment_pattern}/im).match(content)
+        if ! contains_content_tag(contains: contains, content: content)
           for_508 ? content_contains_fail_508(tag: tag, contains: contains) : content_contains_fail(tag: tag, contains: contains)
         end
       end
@@ -51,44 +49,56 @@ module Section508
       alias_method :validate_contains_content_tag, :validate_content_contains
 
       def validate_contains_tag(tag: :img, content: :content, for_508: false, contains: :something)
-        pattern = "<#{Regexp.quote(contains.to_s)}.*>"
-        if ! Regexp.new(/#{pattern}/im).match(content)
+        if ! contains_tag(contains: contains, content: content)
           for_508 ? content_contains_fail_508(tag: tag, contains: contains) : content_contains_fail(tag: tag, contains: contains)
         end
       end
 
-      def attribute_fail_508(tag: :div, attribute: :alt)
-        message = "<#{tag}> requires '#{attribute}' attribute for 508 compliance"
+
+      def contains_tag(contains: :something, content: :content)
+        pattern = "<#{Regexp.quote(contains.to_s)}.*>"
+        Regexp.new(/#{pattern}/im).match(content)
+      end
+
+      def contains_content_tag(contains: :something, content: :content)
+        pattern = "<#{Regexp.quote(contains.to_s)}.*>.*\\S+.*<\/#{Regexp.quote(contains.to_s)}>"
+        comment_pattern = "<!--.*<#{Regexp.quote(contains.to_s)}.*>.*\\S+.*<\/#{Regexp.quote(contains.to_s)}>.*-->"
+        Regexp.new(/#{pattern}/im).match(content) || Regexp.new(/#{comment_pattern}/im).match(content)
+      end
+
+
+      def attribute_fail_508(tag: :div, attribute: :alt, message: '')
+        message = "<#{tag}> requires '#{attribute}' attribute for 508 compliance\n #{message}"
         raise Section508AttributeException, message
       end
 
-      def attribute_fail(tag: :div, attribute: :alt)
-        message = "<#{tag}> requires '#{attribute}' attribute to be valid or complete"
+      def attribute_fail(tag: :div, attribute: :alt, message: '')
+        message = "<#{tag}> requires '#{attribute}' attribute to be valid or complete\n #{message}"
         raise Section508AttributeException, message
       end
 
-      def content_fail_508(tag: :div)
-        message = "<#{tag}> requires content for 508 compliance"
+      def content_fail_508(tag: :div, message: '')
+        message = "<#{tag}> requires content for 508 compliance\n #{message}"
         raise Section508ContentException, message
       end
 
-      def content_contains_fail_508(tag: :div, contains: 'something')
-        message = "<#{tag}> requires content to contain <#{contains}> for 508 compliance"
+      def content_contains_fail_508(tag: :div, contains: 'something', message: '')
+        message = "<#{tag}> requires content to contain <#{contains}> for 508 compliance\n #{message}"
         raise Section508ContentException, message
       end
 
-      def content_fail(tag: :div)
-        message = "<#{tag}> requires content to be valid or complete"
+      def content_fail(tag: :div, message: '')
+        message = "<#{tag}> requires content to be valid or complete\n #{message}"
         raise Section508ContentException, message
       end
 
-      def content_contains_fail(tag: :div, contains: 'something' )
-        message = "<#{tag}> requires content to contain <#{contains}> to be valid or complete"
+      def content_contains_fail(tag: :div, contains: 'something', message: '' )
+        message = "<#{tag}> requires content to contain <#{contains}> to be valid or complete\n #{message}"
         raise Section508ContentException, message
       end
 
-      def deprecated_fail(tag: :big)
-        message = "<#{tag}> is deprecated"
+      def deprecated_fail(tag: :big, message: '')
+        message = "<#{tag}> is deprecated\n #{message}"
         raise Section508TagDeprecationException, message
       end
 
