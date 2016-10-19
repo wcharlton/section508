@@ -48,6 +48,15 @@ module Section508
         end
       end
 
+      alias_method :validate_contains_content_tag, :validate_content_contains
+
+      def validate_contains_tag(tag: :img, content: :content, for_508: false, contains: :something)
+        pattern = "<#{Regexp.quote(contains.to_s)}.*>"
+        if ! Regexp.new(/#{pattern}/im).match(content)
+          for_508 ? content_contains_fail_508(tag: tag, contains: contains) : content_contains_fail(tag: tag, contains: contains)
+        end
+      end
+
       def attribute_fail_508(tag: :div, attribute: :alt)
         message = "<#{tag}> requires '#{attribute}' attribute for 508 compliance"
         raise Section508AttributeException, message

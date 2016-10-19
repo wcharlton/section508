@@ -1,11 +1,30 @@
-<div class="">
-  didit_image_tag<br>
-  <%= image_tag_508 'https://lh4.ggpht.com/WtFP82fcc8w5SffEqSJNENBuk0ckAy65PAZr05yp8XPaqagyMDuKt48iTOGwZ5w2CU0=h310',  title: 'Code Image', alt: 'My Code Image' %>
-</div>
 
-<div class="">
-  map <br>
-  <%= map_tag_508 name: 'My Map' do %>
-      <%= area_tag_508 href: 'javascript:;', alt: 'My Alt', shape: 'rect', coords: '0,1,2,4,5' %>
-  <% end %>
-</div>
+<%= fieldset_tag_508 id: 'ss', name: 'ss', legend: 'image_tag_508' do %>
+    <%= image_tag_508 'https://lh4.ggpht.com/WtFP82fcc8w5SffEqSJNENBuk0ckAy65PAZr05yp8XPaqagyMDuKt48iTOGwZ5w2CU0=h310',  title: 'Code Image', alt: 'My Code Image' %>
+<% end %>
+
+<%= fieldset_tag_508 id: 'ss', name: 'ss', legend: 'map_tag_508 & area_tag_508' do %>
+    <%= map_tag_508 name: 'My Map' do %>
+        <%= area_tag_508 href: 'javascript:;', alt: 'My Alt', shape: 'rect', coords: '0,1,2,4,5' %>
+    <% end %>
+<% end %>
+
+
+<%= fieldset_tag_508 id: 'ss', name: 'ss', legend: 'canvas_tag_508' do %>
+  <%= canvas_tag_508 id: 'canvas_id', title: 'canvas_title', width: 75, height: 75 do %>Canvas Block Content<% end %>
+<% end %>
+
+
+<%= fieldset_tag_508 id: 'ss', name: 'ss', legend: 'figure_tag_508 & figcaption_tag_508' do %>
+    <%= figure_tag_508 id: 'figure_id', title: 'figure' do %>
+        <%= image_tag_508 'https://lh4.ggpht.com/WtFP82fcc8w5SffEqSJNENBuk0ckAy65PAZr05yp8XPaqagyMDuKt48iTOGwZ5w2CU0=h310',  title: 'Code Image', alt: 'My Code Image' %>
+        <%= figcaption_tag_508 do %>
+            Figure Caption
+            <%= link_to_508( 'javascript:;', alt: 'alt', title: 'title') do %>with link<% end %>
+        <% end %>
+    <% end %>
+
+<% end %>
+
+
+
