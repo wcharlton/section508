@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'images' => 'pages#images'
   get 'media' => 'pages#media'
   get 'lists' => 'pages#lists'
+  get 'semantic' => 'pages#semantic'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

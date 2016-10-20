@@ -24,4 +24,8 @@ class PagesController < ApplicationController
     @title = 'Section 508 - Lists'
   end
 
+  def semantic
+    @title = 'Section 508 - Semnatics'
+  end
+
 end

@@ -9,6 +9,7 @@ module ApplicationHelper
     links << { name: 'Images', path: images_path }
     links << { name: 'Media', path: media_path }
     links << { name: 'Lists', path: lists_path }
+    links << { name: 'Semantics', path: semantic_path }
     # links << { name: '', path: }
     # links << { name: '', path: }
     # links << { name: '', path: }
