@@ -1,0 +1,81 @@
+<%= fieldset_tag_508 id: 'ul_tag_508_li_tag_508', name: 'ul_tag_508_li_tag_508', legend: 'ul_tag_508, li_tag_508' do %>
+    <%= ul_tag_508 do %>
+      <%= li_tag_508 do %>Block Content<% end %>
+      <%= li_tag_508 do %>Block Content<% end %>
+      <%= li_tag_508 do %>Block Content<% end %>
+      <%= li_tag_508 do %>Block Content<% end %>
+    <% end %>
+<%end %>
+
+
+<%= fieldset_tag_508 id: 'ol_tag_508_li_tag_508', name: 'ol_tag_508_li_tag_508', legend: 'ol_tag_508, li_tag_508' do %>
+    <%= ol_tag_508 do %>
+        <%= li_tag_508 do %>Block Content<% end %>
+        <%= li_tag_508 do %>Block Content<% end %>
+        <%= li_tag_508 do %>Block Content<% end %>
+        <%= li_tag_508 do %>Block Content<% end %>
+    <% end %>
+<%end %>
+
+
+<%= fieldset_tag_508 id: 'ol_tag_508_ul_tag_508_li_tag_508', name: 'ol_tag_508_ul_tag_508_li_tag_508', legend: 'ol_tag_508, ul_tag_508, li_tag_508' do %>
+    <%= ol_tag_508 do %>
+        <%= li_tag_508 do %>Block Content<% end %>
+        <%= li_tag_508 do %>
+            Block Content
+            <%= ul_tag_508 do %>
+                <%= li_tag_508 do %>Block Content<% end %>
+                <%= li_tag_508 do %>Block Content<% end %>
+                <%= li_tag_508 do %>Block Content<% end %>
+                <%= li_tag_508 do %>Block Content<% end %>
+            <% end %>
+        <% end %>
+        <%= li_tag_508 do %>Block Content<% end %>
+        <%= li_tag_508 do %>Block Content<% end %>
+    <% end %>
+<%end %>
+
+
+<%= fieldset_tag_508 id: 'dir_tag_508', name: 'dir_tag_508', legend: 'dir_tag_508 - override_deprecation' do %>
+    <%= dir_tag_508('INLINE CONTENT', override_deprecation: true) %>
+    <%= dir_tag_508(override_deprecation: true) do %>
+        Block Content
+    <% end %>
+<%end %>
+
+<%= fieldset_tag_508 id: 'dl_tag_508', name: 'dl_tag_508', legend: 'dl_tag_508, dt_tag_508, dd_tag_508' do %>
+    <%= dl_tag_508 do %>
+        <%= dt_tag_508 do %>
+            Block Content - DT
+
+            <%= dd_tag_508('Inline Content - DD') %>
+            <%= dd_tag_508('Inline Content - DD') %>
+            <%= dd_tag_508('Inline Content - DD') %>
+            <%= dd_tag_508 do %>
+                Block Content - DD
+            <% end %>
+            <%= dd_tag_508 do %>
+                Block Content - DD
+            <% end %>
+            <%= dd_tag_508 do %>
+                Block Content - DD
+            <% end %>
+            <%= dd_tag_508 do %>
+                Block Content - DD
+            <% end %>
+
+        <% end %>
+    <% end %>
+<%end %>
+
+
+
+<%= fieldset_tag_508 id: 'ss', name: 'ss', legend: 'menu_tag_508, menuitem_tag_508' do %>
+  <%= menu_tag_508 override_support: true do %>
+        <%= menuitem_tag_508 label: 'A Label', type: 'list', override_support: true  %>
+        <%= menuitem_tag_508 label: 'B Label', type: 'list', override_support: true  %>
+        <%= menuitem_tag_508 label: 'C Label', type: 'list', override_support: true  %>
+        <%= menuitem_tag_508 label: 'D Label', type: 'list', override_support: true  %>
+        <%= menuitem_tag_508 label: 'E Label', type: 'list', override_support: true  %>
+  <%end %>
+<%end %>

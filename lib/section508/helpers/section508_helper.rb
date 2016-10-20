@@ -102,6 +102,12 @@ module Section508
         raise Section508TagDeprecationException, message
       end
 
+      def support_fail(tag: :big, message: '')
+        message = "<#{tag}> is not fully or well supported\n #{message}"
+        raise Section508SupportException, message
+      end
+
+
 
     end
   end

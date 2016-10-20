@@ -20,4 +20,8 @@ class PagesController < ApplicationController
     @title = 'Section 508 - Media'
   end
 
+  def lists
+    @title = 'Section 508 - Lists'
+  end
+
 end

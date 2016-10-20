@@ -1,28 +1,35 @@
-<%= audio_tag_508('content', id: 'media', title: 'Title', src: 'a', type: 'audio/mpeg', controls: true) %>
 
-<%= audio_tag_508 id: 'media', title: 'Title', controls: true do  %>
-    <%= source_tag_508 src: 'sss', type: 'audio/mpeg' %>
-    <%= audio_source_tag_508 src: 'sss', type: 'audio/mpeg' %>
-    <%= track_tag_508 src: 'a', label: 'captions', kind: 'captions' %>
-    <%= track_tag_508 src: 'b', label: 'chapters', kind: 'chapters' %>
-    <%= track_tag_508 src: 'c', label: 'descriptions', kind: 'descriptions' %>
-    <%= track_tag_508 src: 'd', label: 'metadata', kind: 'metadata' %>
-    <%= track_tag_508 src: 'e', label: 'subtitles', kind: 'subtitles' %>
-    More content
+<%= fieldset_tag_508 id: 'audio_tag_508', name: 'audio_tag_508', legend: 'audio_tag_508' do %>
+    <%= audio_tag_508('Your browser does not support HTML5 audio', id: 'media', title: 'Title', src: 'a', type: 'audio/mpeg', controls: true) %>
+<%end %>
+<%= fieldset_tag_508 id: 'audio_tag_508_block', name: 'audio_tag_508_block', legend: 'audio_tag_508, source_tag_508, audio_source_tag_508, track_tag_508' do %>
+    <%= audio_tag_508 id: 'media', title: 'Title', controls: true do  %>
+      <%= source_tag_508 src: 'sss', type: 'audio/mpeg' %>
+      <%= audio_source_tag_508 src: 'sss', type: 'audio/mpeg' %>
+      <%= track_tag_508 src: 'a', label: 'captions', kind: 'captions' %>
+      <%= track_tag_508 src: 'b', label: 'chapters', kind: 'chapters' %>
+      <%= track_tag_508 src: 'c', label: 'descriptions', kind: 'descriptions' %>
+      <%= track_tag_508 src: 'd', label: 'metadata', kind: 'metadata' %>
+      <%= track_tag_508 src: 'e', label: 'subtitles', kind: 'subtitles' %>
+      Your browser does not support HTML5 audio
+    <% end %>
+
 <% end %>
 
 
-
-<%= video_tag_508('content', id: 'media', title: 'Title', src: 'a', type: 'video/mp4', controls: true) %>
-
-<%= video_tag_508 id: 'media', title: 'Title', controls: true do  %>
-    <%= source_tag_508 src: 'sss', type: 'video/ogg' %>
-    <%= video_source_tag_508 src: 'sss', type: 'video/ogg' %>
-    <%= track_tag_508 src: 'a', label: 'captions', kind: 'captions' %>
-    <%= track_tag_508 src: 'b', label: 'chapters', kind: 'chapters' %>
-    <%= track_tag_508 src: 'c', label: 'descriptions', kind: 'descriptions' %>
-    <%= track_tag_508 src: 'd', label: 'metadata', kind: 'metadata' %>
-    <%= track_tag_508 src: 'e', label: 'subtitles', kind: 'subtitles' %>
-    More content
+<%= fieldset_tag_508 id: 'video_tag_508', name: 'video_tag_508', legend: 'video_tag_508' do %>
+  <%= video_tag_508('Your browser does not support HTML5 video', id: 'media', title: 'Title', src: 'a', type: 'video/mp4', controls: true) %>
+<% end %>
+<%= fieldset_tag_508 id: 'video_tag_508_block', name: 'video_tag_508_block', legend: 'video_tag_508, source_tag_508, video_source_tag_508, track_tag_508' do %>
+    <%= video_tag_508 id: 'media', title: 'Title', controls: true do  %>
+      <%= source_tag_508 src: 'sss', type: 'video/ogg' %>
+      <%= video_source_tag_508 src: 'sss', type: 'video/ogg' %>
+      <%= track_tag_508 src: 'a', label: 'captions', kind: 'captions' %>
+      <%= track_tag_508 src: 'b', label: 'chapters', kind: 'chapters' %>
+      <%= track_tag_508 src: 'c', label: 'descriptions', kind: 'descriptions' %>
+      <%= track_tag_508 src: 'd', label: 'metadata', kind: 'metadata' %>
+      <%= track_tag_508 src: 'e', label: 'subtitles', kind: 'subtitles' %>
+        Your browser does not support HTML5 video
+  <% end %>
 <% end %>
 
