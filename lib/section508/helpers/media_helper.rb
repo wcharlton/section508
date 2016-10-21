@@ -20,7 +20,7 @@ module Section508
 
       # <audio>    Defines sound content
       def audio_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         validate_attributes( tag: :audio, options: options, attributes: [:id, :title], for_508: false )
         if ! contains_tag(contains: :source, content: content)
@@ -34,7 +34,7 @@ module Section508
 
       # <video>    Defines a video or movie
       def video_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         validate_attributes( tag: :audio, options: options, attributes: [:id, :title], for_508: false )
         if ! contains_tag(contains: :source, content: content)

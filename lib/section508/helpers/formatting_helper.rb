@@ -3,7 +3,7 @@ module Section508
     module FormattingHelper
       # <abbr>     Defines an abbreviation or an acronym
       def abbr_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :abbr, options ) do
           concat( content )
@@ -15,7 +15,7 @@ module Section508
 
       # <address>  Defines contact information for the author/owner of a document/article
       def address_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :address, options ) do
           concat( content )
@@ -24,7 +24,7 @@ module Section508
 
       # <bdi> Isolates a part of text that might be formatted in a different direction from other text outside it
       def bdi_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :bdi, options ) do
           concat( content )
@@ -33,7 +33,7 @@ module Section508
 
       # <bdo> Overrides the current text direction
       def bdo_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :bdo, options ) do
           concat( content )
@@ -42,7 +42,7 @@ module Section508
 
       # <big> Defines big text. Not supported in HTML5. Use CSS instead.
       def big_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         deprecated_fail(tag: :big) unless options[:override_deprecation]
         content_tag( :big, options ) do
@@ -52,7 +52,7 @@ module Section508
 
       # <blockquote>    Defines a section that is quoted from another source
       def blockquote_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :blockquote, options ) do
           concat( content )
@@ -62,7 +62,7 @@ module Section508
 
       # <center> Defines centered text.  Not supported in HTML5. Use CSS instead.
       def center_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         deprecated_fail(tag: :center) unless options[:override_deprecation]
         content_tag( :center, options ) do
@@ -72,7 +72,7 @@ module Section508
 
       # <cite>     Defines the title of a work
       def cite_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :cite, options ) do
           concat( content )
@@ -81,7 +81,7 @@ module Section508
 
       # <code>     Defines a piece of computer code
       def code_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :code, options ) do
           concat( content )
@@ -90,7 +90,7 @@ module Section508
 
       # <del> Defines text that has been deleted from a document
       def del_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :del, options ) do
           concat( content )
@@ -99,7 +99,7 @@ module Section508
 
       # <dfn> Represents the defining instance of a term
       def dfn_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :dfn, options ) do
           concat( content )
@@ -108,7 +108,7 @@ module Section508
 
       # <em> Defines emphasized text
       def em_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :em, options ) do
           concat( content )
@@ -117,7 +117,7 @@ module Section508
 
       # <font> Defines font, color, and size for text.    Not supported in HTML5. Use CSS instead.
       def font_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         deprecated_fail(tag: :font) unless options[:override_deprecation]
         content_tag( :font, options ) do
@@ -127,7 +127,7 @@ module Section508
 
       # <i>  Defines a part of text in an alternate voice or mood
       def i_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :i, options ) do
           concat( content )
@@ -136,7 +136,7 @@ module Section508
 
       # <ins> Defines a text that has been inserted into a document
       def ins_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :ins, options ) do
           concat( content )
@@ -145,7 +145,7 @@ module Section508
 
       # <kbd> Defines keyboard input
       def kbd_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :kbd, options ) do
           concat( content )
@@ -154,7 +154,7 @@ module Section508
 
       # <mark>     Defines marked/highlighted text
       def mark_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :mark, options ) do
           concat( content )
@@ -163,7 +163,7 @@ module Section508
 
       # <meter>    Defines a scalar measurement within a known range (a gauge)
       def meter_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         validate_attributes( tag: :meter, options: options, attributes: [:title], for_508: true )
         content_tag( :meter, options ) do
@@ -173,7 +173,7 @@ module Section508
 
       # <pre> Defines preformatted text
       def pre_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :pre, options ) do
           concat( content )
@@ -183,7 +183,7 @@ module Section508
 
       # <progress> Represents the progress of a task
       def progress_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         validate_attributes( tag: :progress, options: options, attributes: [:title], for_508: true )
         content_tag( :progress, options ) do
@@ -193,7 +193,7 @@ module Section508
 
       # <q>  Defines a short quotation
       def q_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :q, options ) do
           concat( content )
@@ -202,7 +202,7 @@ module Section508
 
       # <rp> Defines what to show in browsers that do not support ruby annotations
       def rp_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :rp, options ) do
           concat( content )
@@ -212,7 +212,7 @@ module Section508
 
       # <rt> Defines an explanation/pronunciation of characters (for East Asian typography)
       def rt_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :rt, options ) do
           concat( content )
@@ -222,7 +222,7 @@ module Section508
 
       # <ruby>     Defines a ruby annotation (for East Asian typography)
       def ruby_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :ruby, options ) do
           concat( content )
@@ -231,7 +231,7 @@ module Section508
 
       # <s>  Defines text that is no longer correct
       def s_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :s, options ) do
           concat( content )
@@ -240,7 +240,7 @@ module Section508
 
       # <samp>     Defines sample output from a computer program
       def samp_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :samp, options ) do
           concat( content )
@@ -249,7 +249,7 @@ module Section508
 
       # <small>    Defines smaller text
       def small_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :small, options ) do
           concat( content )
@@ -261,7 +261,7 @@ module Section508
 
       # <strong>   Defines important text
       def strong_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :strong, options ) do
           concat( content )
@@ -273,7 +273,7 @@ module Section508
 
       # <sub> Defines subscripted text
       def sub_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :sub, options ) do
           concat( content )
@@ -282,7 +282,7 @@ module Section508
 
       # <sup> Defines superscripted text
       def sup_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :sup, options ) do
           concat( content )
@@ -291,7 +291,7 @@ module Section508
 
       # <time>     Defines a date/time
       def time_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :time, options ) do
           concat( content )
@@ -300,7 +300,7 @@ module Section508
 
       # <tt> Defines teletype text.  Not supported in HTML5. Use CSS instead.
       def tt_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         deprecated_fail(tag: :tt) unless options[:override_deprecation]
         content_tag( :tt, options ) do
@@ -310,7 +310,7 @@ module Section508
 
       # <u>  Defines text that should be stylistically different from normal text
       def u_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :u, options ) do
           concat( content )
@@ -319,7 +319,7 @@ module Section508
 
       # <var> Defines a variable
       def var_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :var, options ) do
           concat( content )
@@ -328,7 +328,7 @@ module Section508
 
       # <wbr> Defines a possible line-break
       def wbr_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :wbr, options ) do
           concat( content )
@@ -338,7 +338,7 @@ module Section508
 
       # <h1> to <h6>    Defines HTML headings
       def h_tag_508(content = nil, size = 1, options = nil, &block)
-        size, options, content = content, size,  capture(&block).html_safe if block_given?
+        size, options, content = content, size,  capture(&block).to_s.html_safe if block_given?
         options ||= {}
         case size
           when 2
@@ -361,37 +361,37 @@ module Section508
 
 
       def h1_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         h_tag_508(content, 1, options)
       end
 
       def h2_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         h_tag_508(content, 2, options)
       end
 
       def h3_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         h_tag_508(content, 3, options)
       end
 
       def h4_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         h_tag_508(content, 4, options)
       end
 
       def h5_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         h_tag_508(content, 5, options)
       end
 
       def h6_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         h_tag_508(content, 6, options)
       end
@@ -399,7 +399,7 @@ module Section508
 
       # <p>  Defines a paragraph
       def p_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :p, options ) do
           concat( content )

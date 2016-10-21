@@ -35,7 +35,7 @@ module Section508
       end
 
       def map_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         validate_attributes( tag: :map, options: options, attributes: [:name], for_508: true )
         content_tag( :map, options ) do
@@ -50,7 +50,7 @@ module Section508
       end
 
       def canvas_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         validate_attributes( tag: :canvas, options: options, attributes: [:id, :title], for_508: true )
         content_tag( :canvas, options ) do
@@ -60,7 +60,7 @@ module Section508
 
 
       def figure_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         validate_attributes( tag: :figure, options: options, attributes: [:id, :title], for_508: true )
 
@@ -73,7 +73,7 @@ module Section508
       end
 
       def figcaption_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :figcaption, options ) do
           concat( content )

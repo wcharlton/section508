@@ -4,7 +4,7 @@ module Section508
 
       # <ul> Defines an unordered list
       def ul_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :ul, options ) do
           concat( content )
@@ -13,7 +13,7 @@ module Section508
 
       # <ol> Defines an ordered list
       def ol_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :ol, options ) do
           concat( content )
@@ -23,7 +23,7 @@ module Section508
 
       # <li> Defines a list item
       def li_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :li, options ) do
           concat( content )
@@ -33,7 +33,7 @@ module Section508
 
       # <dir> Not supported in HTML5. Use <ul> instead. Defines a directory list
       def dir_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         deprecated_fail(tag: :dir, message: 'Not supported in HTML5. Use <ul> instead. Defines a directory list') unless options[:override_deprecation]
         content_tag( :dir, options ) do
@@ -44,7 +44,7 @@ module Section508
 
       # <dl> Defines a description list
       def dl_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :dl, options ) do
           concat( content )
@@ -53,7 +53,7 @@ module Section508
 
       # <dt> Defines a term/name in a description list
       def dt_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :dt, options ) do
           concat( content )
@@ -62,7 +62,7 @@ module Section508
 
       # <dd> Defines a description of a term/name in a description list
       def dd_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         content_tag( :dd, options ) do
           concat( content )
@@ -71,7 +71,7 @@ module Section508
 
       # <menu>     Defines a list/menu of commands
       def menu_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         options ||= {}
         support_fail(tag: :menu) unless options[:override_support]
         content_tag( :menu, options ) do

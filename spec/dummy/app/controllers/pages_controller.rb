@@ -32,6 +32,10 @@ class PagesController < ApplicationController
     @title = 'Section 508 - Frames'
   end
 
+  def links
+    @title = 'Section 508 - Links'
+  end
+
 
 
 end

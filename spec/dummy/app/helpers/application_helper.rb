@@ -11,6 +11,7 @@ module ApplicationHelper
     links << { name: 'Lists', path: lists_path }
     links << { name: 'Semantics', path: semantic_path }
     links << { name: 'Frames', path: frames_path }
+    links << { name: 'Links', path: links_path }
     # links << { name: '', path: }
     # links << { name: '', path: }
     # links << { name: '', path: }

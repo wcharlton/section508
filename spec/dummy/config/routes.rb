@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'lists' => 'pages#lists'
   get 'semantic' => 'pages#semantic'
   get 'frames' => 'pages#frames'
+  get 'links' => 'pages#links'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

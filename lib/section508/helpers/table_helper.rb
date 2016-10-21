@@ -30,7 +30,7 @@ module Section508
 
       # <table>
       def table_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         validate_attributes( tag: :table, options: options, attributes: [:id, :summary], for_508: true )
         caption = options.delete(:caption)
         content_tag( :table, options ) do
@@ -41,7 +41,7 @@ module Section508
 
       # <th>
       def th_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         validate_attributes( tag: :th, options: options, attributes: [:scope], for_508: true )
         validate_content(tag: :th, content: content, for_508: true)
         content_tag( :th, options ) do
@@ -51,7 +51,7 @@ module Section508
 
       # <td>
       def td_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :td, options ) do
           concat( content )
         end
@@ -59,7 +59,7 @@ module Section508
 
       # <tr>
       def tr_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :tr, options ) do
           concat( content )
         end
@@ -67,7 +67,7 @@ module Section508
 
       # <thead>
       def thead_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :thead, options ) do
           concat( content )
         end
@@ -75,7 +75,7 @@ module Section508
 
       # <tbody>
       def tbody_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :tbody, options ) do
           concat( content )
         end
@@ -83,7 +83,7 @@ module Section508
 
       # <tfooter>
       def tfooter_tag_508(content = nil, options = nil, &block)
-        options, content = content, capture(&block).html_safe if block_given?
+        options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :tfooter, options ) do
           concat( content )
         end

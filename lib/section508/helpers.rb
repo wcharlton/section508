@@ -7,7 +7,7 @@ module Section508
     autoload :ImageHelper
     autoload :TableHelper
     autoload :FieldsetHelper
-    autoload :LinkToHelper
+    autoload :LinkHelper
     autoload :FormattingHelper
     autoload :MediaHelper
     autoload :ListHelper
@@ -17,7 +17,7 @@ module Section508
     include ImageHelper
     include TableHelper
     include FieldsetHelper
-    include LinkToHelper
+    include LinkHelper
     include FormattingHelper
     include MediaHelper
     include ListHelper
