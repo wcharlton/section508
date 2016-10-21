@@ -12,6 +12,7 @@ module Section508
     autoload :MediaHelper
     autoload :ListHelper
     autoload :SemanticHelper
+    autoload :FrameHelper
     include Section508Helper
     include ImageHelper
     include TableHelper
@@ -21,5 +22,6 @@ module Section508
     include MediaHelper
     include ListHelper
     include SemanticHelper
+    include FrameHelper
   end
 end

@@ -1,0 +1,22 @@
+
+
+<%= fieldset_tag_508 id: 'ss', name: 'ss', legend: 'frameset_tag_508, frame_tag_508' do %>
+    Frameset should be in head tag
+    <%= frameset_tag_508('<frame src="http://google.com" /><frame src="http://google.com" />'.html_safe, cols: '20%, 80%', override_deprecation: true) %>
+    <%= frameset_tag_508 cols: '20%, 80%', override_deprecation: true do %>
+      <%= frame_tag_508 src: 'http://google.com', override_deprecation: true %>
+      <%= frame_tag_508 src: 'http://google.com', override_deprecation: true %>
+        <%= noframes_tag_508 override_deprecation: true  do %>
+            This page contains frames
+        <% end %>
+    <% end %>
+<% end %>
+
+
+
+<%= fieldset_tag_508 id: 'ss', name: 'ss', legend: 'iframe_tag_508' do %>
+    <%= iframe_tag_508 'non-iframe content', width: '800', height: '125', src: 'https://mdn-samples.mozilla.org/snippets/html/iframe-simple-contents.html', override_deprecation: true %>
+    <br />
+    <%= iframe_tag_508 src: 'https://mdn-samples.mozilla.org/snippets/html/iframe-simple-contents.html', width: '800', height: '125', override_deprecation: true do %> IFRAME CONTENT <% end %>
+<% end %>
+

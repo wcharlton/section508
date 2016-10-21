@@ -28,4 +28,10 @@ class PagesController < ApplicationController
     @title = 'Section 508 - Semnatics'
   end
 
+  def frames
+    @title = 'Section 508 - Frames'
+  end
+
+
+
 end
