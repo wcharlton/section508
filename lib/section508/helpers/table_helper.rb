@@ -28,7 +28,7 @@ module Section508
   module Helpers
     module TableHelper
 
-      # <table>
+      # <table>    Defines a table
       def table_tag_508(content = nil, options = nil, &block)
         options, content = content, capture(&block).to_s.html_safe if block_given?
         validate_attributes( tag: :table, options: options, attributes: [:id, :summary], for_508: true )
@@ -39,7 +39,7 @@ module Section508
         end
       end
 
-      # <th>
+      # <th> Defines a header cell in a table
       def th_tag_508(content = nil, options = nil, &block)
         options, content = content, capture(&block).to_s.html_safe if block_given?
         validate_attributes( tag: :th, options: options, attributes: [:scope], for_508: true )
@@ -49,7 +49,7 @@ module Section508
         end
       end
 
-      # <td>
+      # <td> Defines a cell in a table
       def td_tag_508(content = nil, options = nil, &block)
         options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :td, options ) do
@@ -57,7 +57,7 @@ module Section508
         end
       end
 
-      # <tr>
+      # <tr> Defines a row in a table
       def tr_tag_508(content = nil, options = nil, &block)
         options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :tr, options ) do
@@ -65,7 +65,7 @@ module Section508
         end
       end
 
-      # <thead>
+      # <thead>    Groups the header content in a table
       def thead_tag_508(content = nil, options = nil, &block)
         options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :thead, options ) do
@@ -73,7 +73,7 @@ module Section508
         end
       end
 
-      # <tbody>
+      # <tbody>    Groups the body content in a table
       def tbody_tag_508(content = nil, options = nil, &block)
         options, content = content, capture(&block).to_s.html_safe if block_given?
         content_tag( :tbody, options ) do
@@ -81,10 +81,36 @@ module Section508
         end
       end
 
-      # <tfooter>
-      def tfooter_tag_508(content = nil, options = nil, &block)
+      # <tfoot>    Groups the footer content in a table
+      def tfoot_tag_508(content = nil, options = nil, &block)
         options, content = content, capture(&block).to_s.html_safe if block_given?
-        content_tag( :tfooter, options ) do
+        content_tag( :tfoot, options ) do
+          concat( content )
+        end
+      end
+
+      # <caption>  Defines a table caption
+      def caption_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).to_s.html_safe if block_given?
+        content_tag( :caption, options ) do
+          concat( content )
+        end
+      end
+
+
+      # <col> Specifies column properties for each column within a <colgroup> element
+      def col_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).to_s.html_safe if block_given?
+        content_tag( :col, options ) do
+          concat( content )
+        end
+      end
+
+
+      # <colgroup> Specifies a group of one or more columns in a table for formatting
+      def colgroup_tag_508(content = nil, options = nil, &block)
+        options, content = content, capture(&block).to_s.html_safe if block_given?
+        content_tag( :colgroup, options ) do
           concat( content )
         end
       end
