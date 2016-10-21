@@ -10,7 +10,7 @@ module Section508
     autoload :LinkToHelper
     autoload :FormattingHelper
     autoload :MediaHelper
-    autoload :ListsHelper
+    autoload :ListHelper
     autoload :SemanticHelper
     include Section508Helper
     include ImageHelper
@@ -19,7 +19,7 @@ module Section508
     include LinkToHelper
     include FormattingHelper
     include MediaHelper
-    include ListsHelper
+    include ListHelper
     include SemanticHelper
   end
 end

@@ -1,6 +1,6 @@
 module Section508
   module Helpers
-    module ListsHelper
+    module ListHelper
 
       # <ul> Defines an unordered list
       def ul_tag_508(content = nil, options = nil, &block)
